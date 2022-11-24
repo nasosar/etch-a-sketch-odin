@@ -122,8 +122,8 @@ body {
 }
 
 .div-canvacontainer {
-  height: 650px;
-  width: 600px;
+  height: 72vh;
+  width: 72vh;
   background-color: #4dd1e2;
   border: 5px solid #000464;
   border-radius: 20px;
@@ -135,11 +135,11 @@ body {
 }
 
 .div-canva {
-  height: 500px;
-  width: 500px;
+  height: 57vh;
+  width: 57vh;
   background-color: white;
   border: 3px solid #000464;
-  margin-bottom: 50px;
+  margin-bottom: 5vh;
   box-shadow: 3px 3px #ccedff;
 }
 
