@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    <script src="https://kit.fontawesome.com/4c536a6bd5.js" defer crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Etch-A-Sketch</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="div-titlecontainer">
+            <div class="div-subcontainertitle">
+                <h1 class="h1-title">Etch-a-Sketch</h1>     
+            </div>          
+        </div>
+    </header>
+    
+    <aside class="aside-left">
+        <input type="color" value="#ff3601" id="colorwheel">
+        <button class="btns" id="btn-color">COLOR MODE</button>
+        <button class="btns" id="btn-rainbow">RAINBOW MODE</button>
+        <button class="btns" id="btn-eraser">ERASER</button>
+        <button class="btns" id="btn-clear">CLEAR</button>
+        <div class="div-range">
+            <p class="p-sliderValue" id="valuedisplay">test</p>
+            <input type="range" min="1" max="64" value="16" id="rangebar">            
+        </div>
+
+    </aside>
+
+    <main class="main-center">
+        <div class="div-canvacontainer">
+            <div class="div-canva">
+
+            </div>
+        </div>
+    </main>
+
+    <aside class="aside-right">
+
+    </aside>
+
+    <footer class="footer">
+        <p class="copyRight">Copyright ©
+            <script>
+              document.write(new Date().getFullYear())
+            </script>
+            Natasha Sosa R &nbsp</p>
+        <a href="https://github.com/nasosar" target="_blank" class="a-icon"><i class="fab fa-github"></i></a>
+    </footer>
+    
+    <script src="javascript.js"></script>
+</body>
+</html>

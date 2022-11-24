@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box;
+  background-color: #ccedff;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 15vh 75vh 10vh;
+  grid-template-areas: "header header header" "asideleft main asideright" "footer footer footer";
+}
+
+.header {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  font-size: 12px;
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-titlecontainer {
+  background-color: #ff3601;
+  padding: 4px 40px;
+  border: 3px solid #000464;
+  border-radius: 10px;
+  box-shadow: inset -15px -10px #c12417;
+}
+
+.aside-left {
+  grid-area: asideleft;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+#colorwheel {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+#colorwheel {
+  -webkit-appearance: none;
+  padding: 0;
+  border: 3px solid #000464;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  box-shadow: -5px 5px rgba(0, 4, 100, 0.6);
+}
+
+#colorwheel::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+
+#colorwheel::-webkit-color-swatch-wrapper {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.btns {
+  height: 50px;
+  width: 200px;
+  font-family: "Kanit", sans-serif;
+  font-size: 22px;
+  color: #000464;
+  font-weight: 500;
+  background-color: #ffc109;
+  border: 3px solid #000464;
+  border-radius: 10px;
+  box-shadow: inset -10px -6px #c4900e, -5px 5px rgba(0, 4, 100, 0.6);
+  cursor: pointer;
+}
+
+.div-range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-sliderValue {
+  font-size: 22px;
+  color: #000464;
+  font-weight: 500;
+}
+
+#rangebar {
+  -webkit-appearance: none;
+  height: 8px;
+  width: 200px;
+  border-radius: 8px;
+  background-color: #ffc109;
+  border: 3px solid #000464;
+}
+
+#rangebar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #000464;
+  cursor: pointer;
+}
+
+.main-center {
+  grid-area: main;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-canvacontainer {
+  height: 650px;
+  width: 600px;
+  background-color: #4dd1e2;
+  border: 5px solid #000464;
+  border-radius: 20px;
+  box-shadow: inset -15px -30px #42a4ce, -15px 15px rgba(0, 4, 100, 0.6);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-canva {
+  height: 500px;
+  width: 500px;
+  background-color: white;
+  border: 3px solid #000464;
+  margin-bottom: 50px;
+  box-shadow: 3px 3px #ccedff;
+}
+
+.aside-right {
+  grid-area: asideright;
+}
+
+.footer {
+  font-size: 18px;
+  color: #000464;
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-github {
+  color: #000464;
+  transition: transform 0.3s ease-in-out;
+  font-size: 22px;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}/*# sourceMappingURL=stylesheet.css.map */
