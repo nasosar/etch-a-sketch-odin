@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@-webkit-keyframes scalebtn {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scalebtn {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 body {
   margin: 0;
   padding: 0;
@@ -77,6 +99,17 @@ body {
   cursor: pointer;
 }
 
+.btns:hover {
+  color: white;
+  background-color: #ff3601;
+  box-shadow: inset -10px -6px #c12417, -5px 5px rgba(0, 4, 100, 0.6);
+}
+
+.btns:active {
+  -webkit-animation: scalebtn ease 0.9s;
+          animation: scalebtn ease 0.9s;
+}
+
 .div-range {
   display: flex;
   flex-direction: column;
@@ -98,6 +131,7 @@ body {
   max-width: 300px;
   border-radius: 8px;
   background-color: #ffc109;
+  box-shadow: inset -2px -2px #c4900e;
   border: 3px solid #000464;
 }
 
@@ -108,6 +142,11 @@ body {
   border-radius: 50%;
   background-color: #000464;
   cursor: pointer;
+}
+
+#rangebar:active {
+  background-color: #ff3601;
+  box-shadow: inset -2px -2px #c12417;
 }
 
 .main-center {
@@ -145,7 +184,7 @@ body {
   flex: 1;
 }
 
-.row {
+.canva-pixel {
   margin: 0;
   border: 1px solid rgba(156, 156, 156, 0.2);
   aspect-ratio: 1/1;

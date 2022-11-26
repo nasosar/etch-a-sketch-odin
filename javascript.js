@@ -1,8 +1,16 @@
 //interface functions: show the value on the slider range bar
 
-const slider = document.getElementById("rangebar");
+const slider = document.getElementById('rangebar');
 const valueSlider = document.getElementById("valuedisplay");
 let gridValue = slider.value;
+let pickedColor = document.querySelector('#colorwheel').value;
+let randomColor = '';
+let selectedMode = '';
+
+document.querySelector('#colorwheel').onchange = e => {
+    pickedColor = (e.target.value);
+}
+
 
 valueSlider.innerHTML = (slider.value + " x " + slider.value);
 getGrid ();
@@ -14,16 +22,33 @@ slider.oninput = function () {
     getGrid ();
 }
 
-//grid functions
 
-function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
+// button modes functions
+
+document.querySelector('#btn-color').onclick = e => {
+    selectedMode = 'notrainbow';
+    pickedColor = document.querySelector('#colorwheel').value;
 }
 
+document.querySelector('#btn-rainbow').onclick = e => {
+    selectedMode = 'rainbow';
+    alert("slected the " + selectedMode);
+}
+
+document.querySelector('#btn-eraser').onclick = e => {
+    selectedMode = 'notrainbow';
+    pickedColor = 'white';
+}
+
+document.querySelector('#btn-clear').onclick = e => {
+    selectedMode = 'notrainbow';
+    getGrid ();
+}
+
+//grid functions
+
 function getGrid () {
-    
+
     let columns = gridValue;
     let rows = gridValue;
     const gridCanva = document.querySelector('.div-canva');
@@ -37,11 +62,51 @@ function getGrid () {
         column.className = 'column';
         for (let j = 0; j < rows; ++j) {
             let row = document.createElement('div'); // create row
-            row.className = 'row';
+            row.className = 'canva-pixel';
             column.appendChild(row); // append row in column
         }
         grid.appendChild(column); // append column inside grid
     }
-    gridCanva.appendChild(grid);    
+    gridCanva.appendChild(grid);
+
+    paintPixels ();
+     
+}
+
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+
+
+function paintPixels () {
+    let pixels = document.querySelectorAll('.canva-pixel');
+
+    if (selectedMode === 'rainbow') {
+        pixels.forEach ((pixels) => {
+            pixels.onmouseover = (event) => {
+                alert('funciona porra');
+                pixels.style.backgroundColor = randomPickedColor();                                     
+            }
+        });  
+    } else {
+        pixels.forEach ((pixels) => {
+            pixels.onmouseover = (event) => {                
+                 pixels.style.backgroundColor = pickedColor;                               
+            }
+        }); 
+    }  
+}
+
+function randomPickedColor(pickedColor) {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    randomColor = "rgb(" + x + "," + y + "," + z + ")";
+
+    pickedColor = randomColor;
 }
 

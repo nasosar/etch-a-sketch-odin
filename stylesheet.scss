@@ -19,6 +19,19 @@ $gridcolor: rgb(156, 156, 156, 0.2);
     justify-content: center;
 }
 
+@keyframes scalebtn {
+    0% {       
+        transform: scale(1);
+    }
+
+    5% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -93,6 +106,20 @@ body {
     cursor: pointer;
 }
 
+
+.btns:hover {
+
+    color: white;
+    background-color: $redColor;
+    box-shadow: inset -10px -6px $redShadow, -5px 5px $darkerBlueShadow;
+}
+
+
+
+.btns:active {
+    animation: scalebtn ease 0.9s;
+}
+
 .div-range{
     @include flexCenter (column);
     width: 100%;
@@ -111,6 +138,7 @@ body {
     max-width: 300px;
     border-radius: 8px;
     background-color: $yellowBtn;
+    box-shadow: inset -2px -2px $yellowShadows;
     border: 3px solid $blueBordersAndFonts;
 
 }
@@ -124,6 +152,10 @@ body {
     cursor: pointer;
 }
 
+#rangebar:active {
+    background-color: $redColor;
+    box-shadow: inset -2px -2px $redShadow;
+}
   
 .main-center {
     grid-area: main;
@@ -154,11 +186,15 @@ body {
     flex: 1;
 }
 
-.row {
+.canva-pixel {
     margin: 0;
     border: 1px solid $gridcolor;
     aspect-ratio: 1/1;
 }
+
+// .canva-pixel:hover {
+//     background-color: yellow;
+// }
 
   .grid {
     display: flex;
