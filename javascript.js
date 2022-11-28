@@ -4,7 +4,6 @@ const slider = document.getElementById('rangebar');
 const valueSlider = document.getElementById("valuedisplay");
 let gridValue = slider.value;
 let pickedColor = document.querySelector('#colorwheel').value;
-let randomColor = '';
 let selectedMode = '';
 
 document.querySelector('#colorwheel').onchange = e => {
@@ -32,7 +31,7 @@ document.querySelector('#btn-color').onclick = e => {
 
 document.querySelector('#btn-rainbow').onclick = e => {
     selectedMode = 'rainbow';
-    alert("selected the " + selectedMode);
+    randomPickedColor();
 }
 
 document.querySelector('#btn-eraser').onclick = e => {
@@ -70,7 +69,7 @@ function getGrid () {
     gridCanva.appendChild(grid);
 
     if (selectedMode === "rainbow"){
-        randomColor();
+        randomPickedColor();
     } else {
     paintPixels ();
     } 
@@ -88,7 +87,10 @@ function removeAllChildNodes(parent) {
 function paintPixels () {
     let pixels = document.querySelectorAll('.canva-pixel');
         pixels.forEach ((pixels) => {
-            pixels.onmouseover = (event) => {                
+            pixels.onmouseover = (event) => {
+                if (selectedMode === 'rainbow') {
+                    pixels.style.backgroundColor = randomPickedColor();    
+                }                
                  pixels.style.backgroundColor = pickedColor;                               
             }
         }); 
@@ -97,18 +99,11 @@ function paintPixels () {
 
 
 function randomPickedColor() {
-    alert ('im running');
     let x = Math.floor(Math.random() * 256);
     let y = Math.floor(Math.random() * 256);
     let z = Math.floor(Math.random() * 256);
     pickedColor = "rgb(" + x + "," + y + "," + z + ")";
 
-    let pixels = document.querySelectorAll('.canva-pixel');
-        pixels.forEach ((pixels) => {
-            pixels.onmouseover = (event) => {
-                alert('funciona porra');
-                pixels.style.backgroundColor = randomPickedColor();                                     
-            }
-        });  
+    return pickedColor;
 }
 
